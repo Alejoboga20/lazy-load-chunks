@@ -1,7 +1,5 @@
+import { Navigation } from './routes/Navigation';
+
 export const App = () => {
-	return (
-		<>
-			<h1>App TSX</h1>
-		</>
-	);
+	return <Navigation />;
 };
