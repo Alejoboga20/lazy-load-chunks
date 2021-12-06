@@ -1,10 +1,14 @@
-import { LazyPage1, LazyPage2, LazyPage3 } from '../01-lazyload/pages';
+import { lazy, LazyExoticComponent } from 'react';
+
+const LazyPage1 = lazy(() => import('../01-lazyload/pages/LazyPage1'));
+const LazyPage2 = lazy(() => import('../01-lazyload/pages/LazyPage2'));
+const LazyPage3 = lazy(() => import('../01-lazyload/pages/LazyPage3'));
 
 type JSXComponent = () => JSX.Element;
 
 interface Route {
 	path: string;
-	Component: JSXComponent;
+	Component: LazyExoticComponent<JSXComponent> | JSXComponent;
 	name: string;
 	children?: Route[];
 }
